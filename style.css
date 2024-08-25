@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: URW Chancery L, cursive;
+    caret-color: transparent;
+}
+
+/* Header section starts here */
+.header{
+    padding: 1rem 0.6rem;
+    height: max-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.header h1{
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.navUlBars{
+    display: none;
+}
+
+nav ul{
+    list-style: none;
+}
+
+.navUl{
+    display: flex;
+    gap: 1.8rem;
+}
+
+.navUl .hamburgerIcon{
+    display: none;
+}
+
+.navbarLink a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.current{
+    color: green;
+    border-bottom: 2px solid green;
+}
+
+.current a{
+    color: green;
+}
+
+/* Header section ends here */
+
+/* Main section starts here */
+.mainContainer{
+    height: max-content;
+    padding: 1.2rem 0rem;
+    text-align: center;
+    background-color: #007D9B;
+    color: #ffffff;
+}
+
+.mainContainer h2{
+    font-size: 2.0rem;
+}
+
+/* Main section ends here */
+
+/* Gallery section starts here */
+.galleryContainer{
+    width: 80%;
+    margin: 0.8rem auto;
+    overflow: hidden;
+}
+
+.galleryHeading{
+    padding: 0.6rem 0.2rem;
+    font-size: 1.2rem;
+}
+
+.galleryMainContent ul li{
+    list-style: none;
+}
+
+.galleryMainContent ul{
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 0.2rem;
+}
+
+.galleryImage{
+    position: relative;
+    width: 20rem;
+    height: 18rem;
+    padding: 0.4rem 0.5rem;
+    /* float: left; */
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.galleryImage .overlay{
+    position: absolute;
+    top: 2%;
+    width: 92%;
+    height: 92%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border-radius: 0.8rem;
+    padding: 0rem 0.4rem;
+    padding-top: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+    overflow: auto;
+    scrollbar-color: transparent transparent;
+}
+
+
+.galleryImage .overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.galleryImage img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.galleryImage.visible {
+    opacity: 1;
+}
+
+.galleryImage:nth-child(odd) {
+    margin-top: 0.6rem;
+}
+
+.galleryImage:nth-child(even) {
+    margin-bottom: 0.6rem;
+}
+
+/* Gallery section ends here */
+
+/* Footer section starts here */
+footer{
+    padding: 1.2rem 0rem;
+    text-align: center;
+    font-size: 1.4rem;
+    background-color: #007D9B;
+    color: #ffffff;
+}
+
+/* Footer section ends here */
+
+/* Media Queries starts here */
+@media (max-width: 1220px){
+    .galleryImage{
+        width: 18rem;
+    }
+
+    .galleryMainContent{
+        padding-right: 0.8rem;
+    }
+
+    .galleryMainContent ul{
+        grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+        gap: 0.4rem;
+    }
+
+}
+
+@media (max-width: 1128px){
+    .galleryImage{
+        width: 22rem;
+    }
+
+    .header h1{
+        font-size: 1.6rem;
+    }
+
+    .galleryMainContent ul{
+        grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
+        gap: 0.4rem;
+    }
+
+}
+
+@media (max-width: 922px){
+    .galleryImage{
+        width: 19rem;
+    }
+
+    .galleryMainContent ul{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(304px, 1fr));
+        gap: 0.4rem;
+    }
+
+    .mainContainer{
+        padding: 0.6rem 0rem;
+    }
+
+    .mainContainer h2{
+        font-size: 1.4rem;
+    }
+
+    footer p{
+        font-size: 1.4rem;
+    }
+
+}
+
+@media (max-width: 802px){
+    .galleryImage{
+        width: 76vw;
+    }
+
+    .header h1{
+        font-size: 1.4rem;
+    }
+
+    .mainContainer{
+        padding: 0.3rem 0rem;
+    }
+    
+    .mainContainer h2{
+        font-size: 1.5rem;
+    }
+
+    .galleryImage .overlay{
+        border-radius: 1rem;
+        padding: 0rem 0.6rem;
+    }
+}
+
+@media (max-width: 772px){   
+    .header{
+        position: relative;
+        padding: 2.5rem 0rem;
+    }
+    .header h1{
+        font-size: 1.4rem;
+        position: absolute;
+        top: 36%;
+        left: 5%;
+    }
+
+    .navUl .navbarLink{
+        display: none;
+    }
+
+    .navUl .hamburgerIcon{
+        display: block;
+        color: white;
+        cursor: pointer;
+        font-size: 2rem;
+        position: absolute;
+        top: 30%;
+        right: 5%;
+    }
+
+    .navUlBars{
+        list-style: none;
+        background-color: #333333;
+        padding-left: 2.4rem;
+        display: none;
+    }
+
+    .BarsnavbarLink{
+        padding: 0.4rem 0rem;
+    }
+
+    .BarsnavbarLink:last-child{
+        padding-bottom: 0.8rem;
+    }
+
+    .navUlBars .BarsnavbarLink a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .mainContainer{
+        padding: 0.3rem 0rem;
+    }
+    
+    .mainContainer h2{
+        font-size: 1.5rem;
+    }
+
+    .galleryHeading h2{
+        font-size: 1.6rem;
+    }
+
+    footer p{
+        font-size: 1.2rem;
+    }
+
+    .galleryImage .overlay{
+        width: 95%;
+        padding: 0rem 0.4rem;
+        padding-top: 0.8rem;
+    }
+
+}
+
+
+/* Media Queries ends here */
